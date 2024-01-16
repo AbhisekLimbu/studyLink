@@ -10,6 +10,7 @@ const HomePage = () => {
 
   return (
     <ImageBackground
+    source= {require('./assets/pictureOne.jpg')}
       style={styles.background}
     >
       <View style={styles.container}>
@@ -44,13 +45,13 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 16,
-    color: '#fff', // White text color
+    color: 'green', // White text color
   },
   descriptionText: {
     fontSize: 18,
     marginBottom: 24,
     textAlign: 'center',
-    color: '#fff', // White text color
+    color: 'green', // White text color
   },
   button: {
     backgroundColor: '#3498db', // Blue background color
