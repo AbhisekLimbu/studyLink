@@ -20,6 +20,9 @@ const HomePage = () => {
         <TouchableOpacity style={styles.button} onPress={handleSignUpPress}>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={styles.createButton}>Create an account</Text>
+        </TouchableOpacity>
       </View>
     </ImageBackground>
   );
@@ -59,6 +62,13 @@ const styles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
     color: '#fff', // White text color
+  },
+  createButton: {
+    backgroundColor: 'white', // Corrected: use a string for color
+    marginTop: 16,
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 8,
   },
 });
 
