@@ -1,76 +1,22 @@
+// App.js
+
 import React from 'react';
-import { View, Text, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './Screens/HomeScreen';
+import SingUpScreen from './Screens/SigUpScreen';
 
-const HomePage = () => {
-  const handleSignUpPress = () => {
-    // Handle sign up button press action
-    console.log('Sign Up button pressed!');
-    // Add your sign-up logic here
-  };
+const Stack = createStackNavigator();
 
+const App = () => {
   return (
-    <ImageBackground
-    source= {require('./assets/pictureOne.jpg')}
-      style={styles.background}
-    >
-      <View style={styles.container}>
-        <Text style={styles.headerText}>Study Chamber</Text>
-        <Text style={styles.descriptionText}>
-          Connect, collaborate, conquer – where students unite by major for shared success.
-        </Text>
-        <TouchableOpacity style={styles.button} onPress={handleSignUpPress}>
-          <Text style={styles.buttonText}>Sign Up</Text>
-        </TouchableOpacity>
-        <TouchableOpacity>
-          <Text style={styles.createButton}>Create an account</Text>
-        </TouchableOpacity>
-      </View>
-    </ImageBackground>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="SingUpScreen" component={SingUpScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-    resizeMode: 'cover', // or 'stretch'
-    backgroundColor: '#4CAF50', // Green background color
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    padding: 16,
-  },
-  headerText: {
-    fontSize: 28,
-    fontWeight: 'bold',
-    marginBottom: 16,
-    color: 'green', // White text color
-  },
-  descriptionText: {
-    fontSize: 18,
-    marginBottom: 24,
-    textAlign: 'center',
-    color: 'green', // White text color
-  },
-  button: {
-    backgroundColor: '#3498db', // Blue background color
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-    marginTop: 16,
-  },
-  buttonText: {
-    fontSize: 18,
-    color: '#fff', // White text color
-  },
-  createButton: {
-    backgroundColor: 'white', // Corrected: use a string for color
-    marginTop: 16,
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    borderRadius: 8,
-  },
-});
-
-export default HomePage;
+export default App;
